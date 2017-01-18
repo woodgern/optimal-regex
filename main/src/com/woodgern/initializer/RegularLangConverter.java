@@ -4,37 +4,135 @@ import com.woodgern.automata.NonDeterministic.Nfa;
 import com.woodgern.automata.NonDeterministic.State;
 import com.woodgern.automata.NonDeterministic.Transition;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by njwoodge on 10/01/17.
  */
 public class RegularLangConverter {
 
     public static Nfa regexToNfa(java.lang.String regex) {
-        NfaPair initial = element(regex.charAt(1));
-
-        regex = regex.substring(1);
-
-        Character lastCharacter = '\0';
-        NfaPair recent = initial;
+        NfaPair n = buildExpression(regex);
+        return n.getNfa();
     }
 
-    private static NfaPair RTNHelper(NfaPair pair, String expression) {
-
+    private static NfaPair buildExpression(String expression) {
+        List<String> exps;
+        if (expression.length() == 1 && !isForbidden(expression)) {
+            return element(expression.charAt(0));
+        } else if(expression.charAt(0) == '(' && expression.charAt(expression.length()) == '*' && isParentheses(expression.substring(0, expression.length() - 1))) {
+            return kleenes(buildExpression(expression.substring(1, expression.length() - 2)));
+        } else if (expression.charAt(0) == '(' && expression.charAt(expression.length()) == ')' && isParentheses(expression)) {
+            return buildExpression(expression.substring(1, expression.length() - 1));
+        } else if ((exps = parseByOr(expression)).size() > 1) {
+            NfaPair aggregatedNfa = null;
+            for (String exp : exps) {
+                if(aggregatedNfa == null) {
+                    aggregatedNfa = buildExpression(exp);
+                } else {
+                    aggregatedNfa = or(aggregatedNfa, buildExpression(exp));
+                }
+            }
+            return aggregatedNfa;
+        } else if ((exps = parseByAnd(expression)).size() > 1) {
+            NfaPair aggregatedNfa = null;
+            for (String exp : exps) {
+                if(aggregatedNfa == null) {
+                    aggregatedNfa = buildExpression(exp);
+                } else {
+                    aggregatedNfa = and(aggregatedNfa, buildExpression(exp));
+                }
+            }
+            return aggregatedNfa;
+        } else {
+            return null;
+            //ERROR IN SYNTAX. MAKE AN EXCEPTION FOR THIS OR USE A GOOD ONE
+        }
     }
 
-    private static Expression getNextExpression(String expression) {
-        for(Character ch : expression.toCharArray()) {
+    private static boolean isForbidden(String expression) {
+        List<Character> forbidden = new ArrayList<>(); //Make property file or something
+        forbidden.add('|');
+        forbidden.add('(');
+        forbidden.add(')');
+        forbidden.add('*');
+
+        Character ch = expression.charAt(0);
+        return forbidden.contains(ch);
+    }
+
+    private static boolean isParentheses(String expression) {
+        int paren = 0;
+        for (int i = 0; i < expression.length();i++) {
+            Character ch = expression.charAt(i);
+            if (ch == '(') {
+                paren++;
+            } else if (ch == ')') {
+                paren--;
+            }
+
+            if (paren == 0 && i != expression.length() - 1) {
+                return false;
+            }
+        }
+        return paren == 0;
+    }
+
+    private static List<String> parseByOr(String expression) {
+        List<String> exps = new ArrayList<>();
+        int expStart = 0;
+        for(int i = 0; i < expression.length();i++) {
+            Character ch = expression.charAt(i);
             if(ch == '|') {
+                exps.add(expression.substring(expStart, i));
+                expStart = i + 1;
+            } else if(ch == '(') {
+                int paren = 1;
+                for(i++;i < expression.length();i++) {
+                    Character c = expression.charAt(i);
+                    if (c == '(') {
+                        paren++;
+                    } else if (c == ')') {
+                        paren--;
+                    }
+                    if(paren == 0) {
+                        break;
+                    }
+                }
 
             }
         }
+        exps.add(expression.substring(expStart, expression.length()));
+        return exps;
     }
 
-    private static int parseOutExpression(String expression) {
-        int parenCount = 1;
-        for(int i = 1; i < expression.length(); i++) {
+    private static List<String> parseByAnd(String expression) {
+        List<String> exps = new ArrayList<>();
+        int expStart = 0;
+        for(int i = 0; i < expression.length();i++) {
+            Character ch = expression.charAt(i);
+            if(ch == '(') {
+                int paren = 1;
+                for(i++;i < expression.length();i++) {
+                    Character c = expression.charAt(i);
+                    if (c == '(') {
+                        paren++;
+                    } else if (c == ')') {
+                        paren--;
+                    }
+                    if(paren == 0) {
+                        break;
+                    }
+                }
 
+            } else {
+                exps.add(expression.substring(expStart, i + 1));
+                expStart = i + 1;
+            }
         }
+        exps.add(expression.substring(expStart, expression.length()));
+        return exps;
     }
 
     private static NfaPair or(NfaPair s, NfaPair t) {
@@ -88,29 +186,6 @@ public class RegularLangConverter {
         Transition t = new Transition(end, c);
 
         return new NfaPair(new Nfa(start), end);
-    }
-
-    static class Expression {
-        private NfaPair result;
-        private String remaining;
-        private int type;
-        Expression(NfaPair result, String remaining, int type) {
-            this.result = result;
-            this.remaining = remaining;
-            this.type = type;
-        }
-
-        public NfaPair getResult() {
-            return result;
-        }
-
-        public String getRemaining() {
-            return remaining;
-        }
-
-        public int getType() {
-            return type;
-        }
     }
 
     static class NfaPair {
