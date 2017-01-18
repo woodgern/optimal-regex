@@ -28,4 +28,8 @@ public class Nfa {
         }
         return curStates.stream().anyMatch(state -> state.isEndState());
     }
+
+    public State getStartState() {
+        return startState;
+    }
 }

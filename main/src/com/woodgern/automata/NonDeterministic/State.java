@@ -1,5 +1,6 @@
 package com.woodgern.automata.NonDeterministic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -12,9 +13,9 @@ public class State {
     private List<Transition> transitionList;
     private boolean isEndState;
 
-    public State(List<Transition> transitionList, boolean isEndState) {
-        this.transitionList = transitionList;
+    public State(boolean isEndState) {
         this.isEndState = isEndState;
+        transitionList = new ArrayList<>();
     }
 
     public List<State> getStates(Character ch) {
@@ -23,5 +24,13 @@ public class State {
 
     public boolean isEndState() {
         return isEndState;
+    }
+
+    public void addTransition(Transition t) {
+        transitionList.add(t);
+    }
+
+    public void setEndState(boolean state) {
+        isEndState = state;
     }
 }

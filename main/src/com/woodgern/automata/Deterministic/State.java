@@ -1,5 +1,6 @@
 package com.woodgern.automata.Deterministic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,8 +12,8 @@ public class State {
     private List<Transition> transitionList;
     private boolean isEndState;
 
-    public State(List<Transition> transitionList, boolean isEndState) {
-        this.transitionList = transitionList;
+    public State(boolean isEndState) {
+        this.transitionList = new ArrayList<>();
         this.isEndState = isEndState;
     }
 
@@ -22,5 +23,13 @@ public class State {
 
     public boolean isEndState() {
         return isEndState;
+    }
+
+    public void addTransition(Transition t) {
+        transitionList.add(t);
+    }
+
+    public void setisEndState(boolean state) {
+        isEndState = state;
     }
 }
