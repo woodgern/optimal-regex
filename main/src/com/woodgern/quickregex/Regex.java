@@ -18,6 +18,6 @@ public class Regex {
     }
 
     private void initializeMatcher() {
-        matcher = new Dfa();
+        matcher = new Dfa(null);
     }
 }
