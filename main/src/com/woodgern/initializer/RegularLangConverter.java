@@ -11,6 +11,7 @@ import java.util.List;
  * Created by njwoodge on 10/01/17.
  */
 public class RegularLangConverter {
+    static int stateCounter = 0;
 
     public static Nfa regexToNfa(java.lang.String regex) {
         NfaPair n = buildExpression(regex);
@@ -21,9 +22,11 @@ public class RegularLangConverter {
         List<String> exps;
         if (expression.length() == 1 && !isForbidden(expression)) {
             return element(expression.charAt(0));
-        } else if(expression.charAt(0) == '(' && expression.charAt(expression.length()) == '*' && isParentheses(expression.substring(0, expression.length() - 1))) {
+        } else if (expression.length() == 2 && expression.charAt(1) == '*' && !isForbidden(expression.substring(0, 1))) {
+            return kleenes(buildExpression(expression.substring(0, 1)));
+        } else if(expression.charAt(0) == '(' && expression.charAt(expression.length() - 1) == '*' && isParentheses(expression.substring(0, expression.length() - 1))) {
             return kleenes(buildExpression(expression.substring(1, expression.length() - 2)));
-        } else if (expression.charAt(0) == '(' && expression.charAt(expression.length()) == ')' && isParentheses(expression)) {
+        } else if (expression.charAt(0) == '(' && expression.charAt(expression.length() - 1) == ')' && isParentheses(expression)) {
             return buildExpression(expression.substring(1, expression.length() - 1));
         } else if ((exps = parseByOr(expression)).size() > 1) {
             NfaPair aggregatedNfa = null;
@@ -136,11 +139,12 @@ public class RegularLangConverter {
     }
 
     private static NfaPair or(NfaPair s, NfaPair t) {
+        System.out.println("OR");
         s.getEndState().setEndState(false);
         t.getEndState().setEndState(false);
 
-        State newEnd = new State(true);
-        State newStart = new State(false);
+        State newEnd = new State(true, stateCounter);stateCounter++;
+        State newStart = new State(false, stateCounter);stateCounter++;
 
         Transition t1 = new Transition(newEnd, '\0');
         Transition t2 = new Transition(newEnd, '\0');
@@ -156,6 +160,7 @@ public class RegularLangConverter {
     }
 
     private static NfaPair and(NfaPair s, NfaPair t) {
+        System.out.println("AND");
         s.getEndState().setEndState(false);
 
         Transition tr = new Transition(t.getNfa().getStartState(), '\0');
@@ -164,10 +169,11 @@ public class RegularLangConverter {
     }
 
     private static NfaPair kleenes(NfaPair s) {
+        System.out.println("KLEENES");
         s.getEndState().setEndState(false);
 
-        State startState = new State(false);
-        State endState = new State(true);
+        State startState = new State(false, stateCounter);stateCounter++;
+        State endState = new State(true, stateCounter);stateCounter++;
 
         Transition t1 = new Transition(endState, '\0');
         Transition t2 = new Transition(s.getNfa().getStartState(), '\0');
@@ -181,9 +187,11 @@ public class RegularLangConverter {
     }
 
     private static NfaPair element(Character c) {
-        State start = new State(false);
-        State end = new State(true);
+        System.out.println("ELEMENT: " + c);
+        State start = new State(false, stateCounter);stateCounter++;
+        State end = new State(true, stateCounter);stateCounter++;
         Transition t = new Transition(end, c);
+        start.addTransition(t);
 
         return new NfaPair(new Nfa(start), end);
     }

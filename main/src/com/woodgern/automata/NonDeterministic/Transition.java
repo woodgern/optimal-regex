@@ -20,4 +20,9 @@ public class Transition {
         public Character getChar() {
             return ch;
         }
+
+        public String toString() {
+            return "To " + state.getName() + " on " + (int)ch;
+        }
+
 }
