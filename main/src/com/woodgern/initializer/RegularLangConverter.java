@@ -19,6 +19,7 @@ public class RegularLangConverter {
     }
 
     private static NfaPair buildExpression(String expression) {
+        System.out.println("EXPRESSION: " + expression);
         List<String> exps;
         if (expression.length() == 1 && !isForbidden(expression)) {
             return element(expression.charAt(0));
@@ -106,7 +107,9 @@ public class RegularLangConverter {
 
             }
         }
-        exps.add(expression.substring(expStart, expression.length()));
+        if (expStart != expression.length()) {
+            exps.add(expression.substring(expStart, expression.length()));
+        }
         return exps;
     }
 
@@ -130,11 +133,19 @@ public class RegularLangConverter {
                 }
 
             } else {
-                exps.add(expression.substring(expStart, i + 1));
-                expStart = i + 1;
+                if(i + 1 != expression.length() && expression.charAt(i + 1) == '*') {
+                    exps.add(expression.substring(expStart, i + 2));
+                    expStart = i + 2;
+                    i++;
+                } else {
+                    exps.add(expression.substring(expStart, i + 1));
+                    expStart = i + 1;
+                }
             }
         }
-        exps.add(expression.substring(expStart, expression.length()));
+        if (expStart != expression.length()) {
+            exps.add(expression.substring(expStart, expression.length()));
+        }
         return exps;
     }
 
@@ -164,7 +175,7 @@ public class RegularLangConverter {
         s.getEndState().setEndState(false);
 
         Transition tr = new Transition(t.getNfa().getStartState(), '\0');
-        s.getNfa().getStartState().addTransition(tr);
+        s.getEndState().addTransition(tr);
         return new NfaPair(s.getNfa(), t.getEndState());
     }
 

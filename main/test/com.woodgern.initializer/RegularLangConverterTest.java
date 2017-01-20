@@ -7,10 +7,10 @@ import com.woodgern.automata.NonDeterministic.*;
 public class RegularLangConverterTest {
     @Test
     public void testCreateNfa() {
-        String testRegex = "a*b";
+        String testRegex = "((aa*bb*)|(catsinthecradle))*";
         Nfa built = RegularLangConverter.regexToNfa(testRegex);
 
-        boolean b = built.matches("aab");
+        boolean b = built.matches("aaaaaabbbbbcatsinthecradle");
         Assert.assertTrue(b);
     }
 }

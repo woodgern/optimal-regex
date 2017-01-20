@@ -36,7 +36,7 @@ public class Nfa {
             }
             curStates = new ArrayList<>(nextStates);
             nextStates.clear();
-            System.out.println("After char tick: " + curStates);
+            System.out.println("After char \'" + in + "\' tick: " + curStates);
         }
         spinUpEpsilons(curStates);
         System.out.println("At end: " + curStates);
@@ -54,7 +54,7 @@ public class Nfa {
             }
             nextStateTick = nextStateTick.stream().filter(state -> !epsilonStates.contains(state)).collect(Collectors.toList());
             epsilonStates.addAll(nextStateTick);
-            curStateTick = nextStateTick;
+            curStateTick = new ArrayList<>(nextStateTick);
         } while (nextStateTick.size() != 0);
         curStates.addAll(epsilonStates);
 
