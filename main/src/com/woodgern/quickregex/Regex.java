@@ -1,6 +1,6 @@
 package com.woodgern.quickregex;
 
-import com.woodgern.automata.Deterministic.Dfa;
+import com.woodgern.automata.Dfa;
 
 /**
  * Created by njwoodge on 09/01/17.
@@ -18,6 +18,6 @@ public class Regex {
     }
 
     private void initializeMatcher() {
-        matcher = new Dfa(null);
+        //matcher = new Dfa(null);
     }
 }

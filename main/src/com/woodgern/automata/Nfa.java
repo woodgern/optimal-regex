@@ -1,4 +1,4 @@
-package com.woodgern.automata.NonDeterministic;
+package com.woodgern.automata;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,53 +11,47 @@ import java.util.stream.Collectors;
  */
 public class Nfa {
 
-    private State startState;
+    private NfaState startState;
     private Set<Character> alphabet;
 
-    public Nfa(State startState) {
+    Nfa(NfaState startState) {
         this.startState = startState;
         alphabet = new HashSet<>();
     }
 
     public boolean matches(String s) {
-        List<State> curStates = new ArrayList<>();
+        List<NfaState> curStates = new ArrayList<>();
         curStates.add(startState);
-        List<State> nextStates;
-        System.out.println("StartState: " + startState);
-        System.out.println("Transitions: " + startState.getTransitionList());
+        List<NfaState> nextStates;
 
         for (Character in : s.toCharArray()) {
-            spinUpEpsilons(curStates);
-
-            System.out.println("After epsilon tick: " + curStates);
+            closure(curStates);
 
             nextStates = move(curStates, in);
             if(nextStates.size() == 0) {
                 return false;
             }
             curStates = new ArrayList<>(nextStates);
-            System.out.println("After char \'" + in + "\' tick: " + curStates);
         }
-        spinUpEpsilons(curStates);
-        System.out.println("At end: " + curStates);
+        closure(curStates);
         return curStates.stream().anyMatch(state -> state.isEndState());
     }
 
-    private List<State> move(List<State> curStates, Character in) {
-        List<State> reachable = new ArrayList<>();
-        for(State state : curStates) {
+    private List<NfaState> move(List<NfaState> curStates, Character in) {
+        List<NfaState> reachable = new ArrayList<>();
+        for(NfaState state : curStates) {
             reachable.addAll(state.getStates(in));
         }
         return reachable;
     }
 
-    private List<State> spinUpEpsilons(List<State> curStates) {
-        List<State> epsilonStates = new ArrayList<>();
-        List<State> nextStateTick = new ArrayList<>();
-        List<State> curStateTick = new ArrayList<>(curStates);
+    private List<NfaState> closure(List<NfaState> curStates) {
+        List<NfaState> epsilonStates = new ArrayList<>();
+        List<NfaState> nextStateTick = new ArrayList<>();
+        List<NfaState> curStateTick = new ArrayList<>(curStates);
         do {
             nextStateTick.clear();
-            for(State state : curStateTick) {
+            for(NfaState state : curStateTick) {
                 nextStateTick.addAll(state.getEpsilonStates());
             }
             nextStateTick = nextStateTick.stream().filter(state -> !epsilonStates.contains(state)).collect(Collectors.toList());
@@ -69,19 +63,19 @@ public class Nfa {
         return  curStates;
     }
 
-    public State getStartState() {
+    NfaState getStartState() {
         return startState;
     }
 
-    public Set<Character> getAlphabet() {
+    Set<Character> getAlphabet() {
         return alphabet;
     }
 
-    public void addToAlphabet(char c) {
+    void addToAlphabet(char c) {
         alphabet.add(c);
     }
 
-    public void combineAlphabets(Set<Character> a) {
+    void combineAlphabets(Set<Character> a) {
         alphabet.addAll(a);
     }
 }
