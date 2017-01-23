@@ -1,11 +1,12 @@
 package com.woodgern.initializer;
 
+import com.woodgern.automata.Deterministic.Dfa;
 import com.woodgern.automata.NonDeterministic.Nfa;
 import com.woodgern.automata.NonDeterministic.State;
 import com.woodgern.automata.NonDeterministic.Transition;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by njwoodge on 10/01/17.
@@ -13,13 +14,89 @@ import java.util.List;
 public class RegularLangConverter {
     static int stateCounter = 0;
 
+    public static Dfa nfaToDfa(Nfa n) {
+        Set<Character> alphabet = n.getAlphabet();
+        System.out.println(alphabet);
+        List<TableEntry> table = new ArrayList<>();
+
+        List<State> init = new ArrayList<>();
+        init.add(n.getStartState());
+        List<State> initialSet = closure(init);
+        com.woodgern.automata.Deterministic.State initial = toDfaState(initialSet);
+
+        Optional<TableEntry> t0 = Optional.of(new TableEntry(initial, initialSet));
+        do {
+            TableEntry t = t0.get();
+            t.mark();
+            for(Character ch : alphabet) {
+                List<State> u = closure(move(t.getStates(), ch));
+                com.woodgern.automata.Deterministic.State dfaState = toDfaState(u);
+                System.out.println("New dfa state: " + dfaState);
+                Optional<TableEntry> duplicateEntry = table.stream().filter(te -> te.getState().toString().equals(dfaState.toString())).findFirst();
+                if (!dfaState.toString().equals("") && !duplicateEntry.isPresent()) {
+                    TableEntry tn = new TableEntry(dfaState, u);
+                    table.add(tn);
+                }
+
+                com.woodgern.automata.Deterministic.State transitionState = dfaState;
+                if (duplicateEntry.isPresent()) {
+                    transitionState = duplicateEntry.get().getState();
+                }
+
+                if (!dfaState.toString().equals("")) {
+                    com.woodgern.automata.Deterministic.Transition transition = new com.woodgern.automata.Deterministic.Transition(transitionState, ch);
+                    t.getState().addTransition(transition);
+                    System.out.println("New trans from " + t.getState() + " " + transition);
+                }
+            }
+        } while((t0 = table.stream().filter(te -> !te.isMarked()).findFirst()).isPresent());
+
+        return new Dfa(initial);
+    }
+
+    private static com.woodgern.automata.Deterministic.State toDfaState(List<State> states) {
+        boolean isEndState = states.stream().anyMatch(st -> st.isEndState());
+        String name = "";
+        List<String> names = states.stream().map(st -> st.toString()).collect(Collectors.toList());
+        names.sort(Comparator.naturalOrder());
+        for(String st : names) {
+            name += st + "|";
+        }
+        return new com.woodgern.automata.Deterministic.State(isEndState, name);
+    }
+
+    private static List<State> move(List<State> curStates, Character in) {
+        List<State> reachable = new ArrayList<>();
+        for(State state : curStates) {
+            reachable.addAll(state.getStates(in));
+        }
+        return reachable;
+    }
+
+    private static List<State> closure(List<State> curStates) {
+        List<State> epsilonStates = new ArrayList<>();
+        List<State> nextStateTick = new ArrayList<>();
+        List<State> curStateTick = new ArrayList<>(curStates);
+        do {
+            nextStateTick.clear();
+            for(State state : curStateTick) {
+                nextStateTick.addAll(state.getEpsilonStates());
+            }
+            nextStateTick = nextStateTick.stream().filter(state -> !epsilonStates.contains(state)).collect(Collectors.toList());
+            epsilonStates.addAll(nextStateTick);
+            curStateTick = new ArrayList<>(nextStateTick);
+        } while (nextStateTick.size() != 0);
+        curStates.addAll(epsilonStates);
+
+        return  curStates;
+    }
+
     public static Nfa regexToNfa(java.lang.String regex) {
         NfaPair n = buildExpression(regex);
         return n.getNfa();
     }
 
     private static NfaPair buildExpression(String expression) {
-        System.out.println("EXPRESSION: " + expression);
         List<String> exps;
         if (expression.length() == 1 && !isForbidden(expression)) {
             return element(expression.charAt(0));
@@ -150,7 +227,6 @@ public class RegularLangConverter {
     }
 
     private static NfaPair or(NfaPair s, NfaPair t) {
-        System.out.println("OR");
         s.getEndState().setEndState(false);
         t.getEndState().setEndState(false);
 
@@ -167,20 +243,23 @@ public class RegularLangConverter {
         newStart.addTransition(t3);
         newStart.addTransition(t4);
 
-        return new NfaPair(new Nfa(newStart), newEnd);
+        Nfa n = new Nfa(newStart);
+        n.combineAlphabets(s.getNfa().getAlphabet());
+        n.combineAlphabets(t.getNfa().getAlphabet());
+        return new NfaPair(n, newEnd);
     }
 
     private static NfaPair and(NfaPair s, NfaPair t) {
-        System.out.println("AND");
         s.getEndState().setEndState(false);
 
         Transition tr = new Transition(t.getNfa().getStartState(), '\0');
         s.getEndState().addTransition(tr);
+
+        s.getNfa().combineAlphabets(t.getNfa().getAlphabet());
         return new NfaPair(s.getNfa(), t.getEndState());
     }
 
     private static NfaPair kleenes(NfaPair s) {
-        System.out.println("KLEENES");
         s.getEndState().setEndState(false);
 
         State startState = new State(false, stateCounter);stateCounter++;
@@ -194,17 +273,20 @@ public class RegularLangConverter {
         s.getEndState().addTransition(t1);
         s.getEndState().addTransition(t2);
 
-        return new NfaPair(new Nfa(startState), endState);
+        Nfa n = new Nfa(startState);
+        n.combineAlphabets(s.getNfa().getAlphabet());
+        return new NfaPair(n, endState);
     }
 
     private static NfaPair element(Character c) {
-        System.out.println("ELEMENT: " + c);
         State start = new State(false, stateCounter);stateCounter++;
         State end = new State(true, stateCounter);stateCounter++;
         Transition t = new Transition(end, c);
         start.addTransition(t);
 
-        return new NfaPair(new Nfa(start), end);
+        Nfa n = new Nfa(start);
+        n.addToAlphabet(c);
+        return new NfaPair(n, end);
     }
 
     static class NfaPair {
@@ -215,12 +297,38 @@ public class RegularLangConverter {
             this.endState = endState;
         }
 
-        public Nfa getNfa() {
+        Nfa getNfa() {
             return nfa;
         }
 
-        public State getEndState() {
+        State getEndState() {
             return endState;
+        }
+    }
+
+    static class TableEntry {
+        private com.woodgern.automata.Deterministic.State state;
+        private boolean isMarked = false;
+        private List<State> states;
+        TableEntry(com.woodgern.automata.Deterministic.State state, List<State> states) {
+            this.state = state;
+            this.states = states;
+        }
+
+        com.woodgern.automata.Deterministic.State getState() {
+            return state;
+        }
+
+        boolean isMarked() {
+            return isMarked;
+        }
+
+        void mark() {
+            isMarked = true;
+        }
+
+        List<State> getStates() {
+            return states;
         }
     }
 }

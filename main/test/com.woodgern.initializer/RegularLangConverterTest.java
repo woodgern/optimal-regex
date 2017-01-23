@@ -1,5 +1,6 @@
 package com.woodgern.initializer;
 
+import com.woodgern.automata.Deterministic.Dfa;
 import org.junit.Test;
 import org.junit.Assert;
 import com.woodgern.automata.NonDeterministic.*;
@@ -7,10 +8,11 @@ import com.woodgern.automata.NonDeterministic.*;
 public class RegularLangConverterTest {
     @Test
     public void testCreateNfa() {
-        String testRegex = "((aa*bb*)|(catsinthecradle))*";
+        String testRegex = "(abc|xyz)*";
         Nfa built = RegularLangConverter.regexToNfa(testRegex);
+        Dfa converted = RegularLangConverter.nfaToDfa(built);
 
-        boolean b = built.matches("aaaaaabbbbbcatsinthecradle");
+        boolean b = converted.matches("");
         Assert.assertTrue(b);
     }
 }

@@ -2,41 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ce9679f-3cda-4a09-9bd3-0c3fb02a37b0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/lib/junit-4.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/optimal-regex.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/main/main.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/lib/junit-4.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/optimal-regex.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/main/main.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/optimal-regex.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/optimal-regex.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/optimal-regex.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/lib/junit-4.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/lib/junit-4.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/optimal-regex.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/lib/hamcrest-core-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/lib/hamcrest-core-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/main/main.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/main/main.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/.idea/misc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/production/optimal-regex/production/optimal-regex/.idea/compiler.xml" afterPath="" />
     </list>
     <ignored path="optimal-regex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +59,8 @@
       <file leaf-file-name="RegularLangConverter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/initializer/RegularLangConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="172" column="54" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="54" />
+            <state relative-caret-position="4428">
+              <caret line="246" column="17" selection-start-line="246" selection-start-column="17" selection-end-line="246" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,13 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegularLangConverterTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverterTest.java">
+      <file leaf-file-name="Dfa.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Dfa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+            <state relative-caret-position="268">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#130#131#0" expanded="true" />
+                <element signature="e#174#175#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +84,23 @@
       <file leaf-file-name="Nfa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Nfa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+            <state relative-caret-position="159">
+              <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2554#2555#0" expanded="true" />
+                <element signature="e#2608#2609#0" expanded="true" />
+                <element signature="e#2642#2643#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegularLangConverterTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,13 +109,13 @@
         </entry>
       </file>
       <file leaf-file-name="Transition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Transition.java">
+        <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Transition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+            <state relative-caret-position="360">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
               <folding>
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,12 +163,13 @@
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/NFA.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Nfa.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/DeltaPair.java" />
-        <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Dfa.java" />
-        <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/State.java" />
         <option value="$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverter.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/quickregex/Regex.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/State.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Transition.java" />
+        <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/State.java" />
+        <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Transition.java" />
+        <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Dfa.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/initializer/RegularLangConverter.java" />
         <option value="$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Nfa.java" />
         <option value="$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverterTest.java" />
@@ -197,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,6 +290,10 @@
               <option name="myItemId" value="woodgern" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="initializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -320,12 +342,15 @@
               <option name="myItemId" value="automata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Deterministic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -708,34 +733,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 36m 24s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 21m 29s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 37m 17s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 21m 45s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 37m 33s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 21m 51s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 37m 43s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 21m 55s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 37m 48s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 00s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 37m 59s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 30s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 38m 11s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 38s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 38m 21s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 43s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 38m 45s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 49s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_optimal-regex - 2017.01.19 at 21h 38m 50s.xml">
+    <history-entry file="All_in_optimal-regex - 2017.01.22 at 19h 22m 54s.xml">
       <configuration name="All in optimal-regex" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -781,7 +806,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Nfa.java</url>
+          <line>84</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1093,20 +1127,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/com/woodgern/initializer/RegularLangConverter.java" />
-    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Transition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverterTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1114,13 +1134,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Dfa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1153,10 +1166,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+          <folding>
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Transition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="178">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#463#464#0" expanded="true" />
             <element signature="e#536#537#0" expanded="true" />
@@ -1164,20 +1189,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Transition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/Deterministic/Dfa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/automata/NonDeterministic/Nfa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+        <state relative-caret-position="159">
+          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2554#2555#0" expanded="true" />
+            <element signature="e#2608#2609#0" expanded="true" />
+            <element signature="e#2642#2643#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/src/com/woodgern/initializer/RegularLangConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="172" column="54" selection-start-line="172" selection-start-column="54" selection-end-line="172" selection-end-column="54" />
+        <state relative-caret-position="4428">
+          <caret line="246" column="17" selection-start-line="246" selection-start-column="17" selection-end-line="246" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1186,8 +1236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/test/com.woodgern.initializer/RegularLangConverterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+        <state relative-caret-position="252">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

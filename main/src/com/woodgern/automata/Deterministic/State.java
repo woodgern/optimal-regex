@@ -11,14 +11,16 @@ public class State {
 
     private List<Transition> transitionList;
     private boolean isEndState;
+    private String name;
 
-    public State(boolean isEndState) {
+    public State(boolean isEndState, String name) {
         this.transitionList = new ArrayList<>();
         this.isEndState = isEndState;
+        this.name = name;
     }
 
     public State getState(Character ch) {
-        return transitionList.stream().filter(t -> t.getChar().equals(ch)).findAny().orElse(null).getState();
+        return transitionList.stream().filter(t -> t.getChar().equals(ch)).map(tr -> tr.getState()).findAny().orElse(null);
     }
 
     public boolean isEndState() {
@@ -29,7 +31,15 @@ public class State {
         transitionList.add(t);
     }
 
-    public void setisEndState(boolean state) {
+    public List<Transition> getTransitions() {
+        return transitionList;
+    }
+
+    public void setIsEndState(boolean state) {
         isEndState = state;
+    }
+
+    public String toString() {
+        return name;
     }
 }
